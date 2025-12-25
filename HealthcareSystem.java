@@ -1,24 +1,21 @@
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class HealthcareSystem {
-    private List<Staff> staff = new ArrayList<>();
-    private List<Clinicians> clinicians = new ArrayList<>();
-    private List<Perscriptions> perscriptions = new ArrayList<>();
-    private List<appointments> appointments = new ArrayList<>();
-    private List<Referrals> referrals = new ArrayList<>();
-    private List<Patients> patients = new ArrayList<>();
-    private List<Facilites> facilites = new ArrayList<>();
 
-    static DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/mm/yyyy");
-    static DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm");
-
-    public static void main(String[] args) {
-        try {
-            
-        }
+    static List<Patient> patients = new Arraylist<>();
+    static List<Clinician> clinicians = new Arraylist<>();
+    static List<Facilities> facilities = new ArrayList<>();
+    static List<Appointment> appointments = new ArrayList<>();
+    static List<Percsription> perscriptions = new ArrayList<>();
+    static List<Referrals> referrals = new ArrayList<>();
+    static List<Staff> staff = new ArrayList<>();
+    
+    public static void main (String[] args) {
+        loadAllData();
     }
 }
-
