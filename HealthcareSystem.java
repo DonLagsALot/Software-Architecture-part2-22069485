@@ -105,5 +105,26 @@ public class HealthcareSystem {
             System.out.printf("Ref Id: %s, Priority: %s, To Facility: %s, Reason: %s%n", r.id, r.urgency, r.facilitiesId, r.reason);
         }
     }
+    static void findPatient(String id) {
+        for (Patient p : patients) {
+            if (p.id.equalsIgnoreCase(id)) {
+                System.out.println("\n--- PATIENT FOUND ---");
+                System.out.println("ID: " + p.id);
+                System.out.println("Name: " + p.firstName + " " + p.lastName);
+                System.out.println("Address: " + p.address);
+                System.out.println("NHS Number: " + p.nhsNumber);
+                return;
+            }
+        }
+        System.out.println("Patient not found");
 }
+
+static void loadAllData(){
+    try {
+        for (String[] row : readCsv("patients.csv")) {
+            if (row.length >= 14) patients.add(new Patient(row[0], row[1], row[2], row[3], row[4], row[8]));
+        }
+    }
+}
+
 
