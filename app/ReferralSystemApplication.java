@@ -41,7 +41,6 @@ public final class ReferralSystemApplication {
         AppointmentService appointmentService = new AppointmentService(appointmentRepo, patientRepo, clinicianRepo);
         PrescriptionService prescriptionService = new PrescriptionService(prescriptionRepo, patientRepo, clinicianRepo);
 
-        // Singleton manager used by ReferralService (explicit coursework pattern)
         ReferralManager referralManager = ReferralManager.getInstance(referralRepo);
 
         ReferralService referralService = new ReferralService(referralManager, patientRepo, clinicianRepo, appointmentRepo);
