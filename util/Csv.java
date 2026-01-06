@@ -70,8 +70,9 @@ public final class Csv {
 
     private static String esc(String v) {
         if (v == null) return "";
-        boolean needs = v.contains(",") || v.contains(""") || v.contains("\n") || v.contains("\r");
-        String s = v.replace(""", """");
-        return needs ? """ + s + """ : s;
+        // CSV escaping: if value contains comma, quote, or newline, wrap in quotes and double any quotes.
+        boolean needs = v.contains(",") || v.contains("\"") || v.contains("\n") || v.contains("\r");
+        String s = v.replace("\"", "\"\"");
+        return needs ? "\"" + s + "\"" : s;
     }
 }
