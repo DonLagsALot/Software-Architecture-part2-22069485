@@ -6,10 +6,6 @@ import repository.ReferralRepository;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * Singleton Manager (explicitly demonstrates Singleton pattern for coursework).
- * Responsible ONLY for referral storage operations (cohesive responsibility).
- */
 public final class ReferralManager {
     private static ReferralManager instance;
     private final ReferralRepository repo;
