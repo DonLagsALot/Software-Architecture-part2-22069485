@@ -18,8 +18,9 @@ public final class ReferralSystemApplication {
                 JOptionPane.showMessageDialog(null, "Startup failed:\n" + e.getMessage(),
                         "Error", JOptionPane.ERROR_MESSAGE);
             }
-        });
+        }
     }
+}
 
     private static void start() {
         Path dataDir = DataConfig.resolveDataDir();
